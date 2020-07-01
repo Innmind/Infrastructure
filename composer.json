@@ -15,7 +15,10 @@
         "issues": "http://github.com/Innmind/Infrastructure/issues"
     },
     "require": {
-        "php": "~7.4"
+        "php": "~7.4",
+        "innmind/infrastructure-amqp": "^3.0",
+        "innmind/infrastructure-neo4j": "^3.0",
+        "innmind/infrastructure-nginx": "^3.0"
     },
     "autoload": {
         "psr-4": {
