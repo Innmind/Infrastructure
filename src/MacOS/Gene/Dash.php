@@ -83,7 +83,7 @@ final class Dash implements Gene
             $install = new Script(
                 Command::foreground('mv')
                     ->withArgument('Dash.app')
-                    ->withArgument('/Applications/Dash2.app')
+                    ->withArgument('/Applications/')
                     ->withWorkingDirectory(Path::of('Downloads/')),
                 Command::foreground('rm')
                     ->withArgument('Dash.zip')
