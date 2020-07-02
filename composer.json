@@ -19,7 +19,9 @@
         "innmind/infrastructure-amqp": "^3.0",
         "innmind/infrastructure-neo4j": "^3.0",
         "innmind/infrastructure-nginx": "^3.0",
-        "innmind/genome": "^3.0"
+        "innmind/genome": "^3.0",
+        "innmind/crawler": "^6.0",
+        "innmind/url-template": "^2.0"
     },
     "autoload": {
         "psr-4": {
