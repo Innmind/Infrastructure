@@ -52,7 +52,7 @@ final class GPG implements Gene
             );
             $alreadyExist($target);
 
-            // return $history;
+            return $history;
         } catch (ScriptFailed $e) {
             // do not exist, trying to install
         }
