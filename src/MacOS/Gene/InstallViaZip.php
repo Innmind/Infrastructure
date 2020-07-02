@@ -78,12 +78,6 @@ final class InstallViaZip implements Gene
         History $history
     ): History {
         try {
-            $url = $this->search($local->remote()->http());
-        } catch (\Throwable $e) {
-            throw new ExpressionFailed($this->name());
-        }
-
-        try {
             $alreadyExist = new Script(
                 Command::foreground('test')
                     ->withShortOption('d')
@@ -95,6 +89,12 @@ final class InstallViaZip implements Gene
             return $history;
         } catch (ScriptFailed $e) {
             // do not exist, trying to install
+        }
+
+        try {
+            $url = $this->search($local->remote()->http());
+        } catch (\Throwable $e) {
+            throw new ExpressionFailed($this->name());
         }
 
         try {
