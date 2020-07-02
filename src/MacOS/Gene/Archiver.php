@@ -41,6 +41,20 @@ final class Archiver implements Gene
         History $history
     ): History {
         try {
+            $alreadyExist = new Script(
+                Command::foreground('test')
+                    ->withShortOption('d')
+                    ->withArgument('Archiver.app')
+                    ->withWorkingDirectory(Path::of('/Applications/')),
+            );
+            $alreadyExist($target);
+
+            return $history;
+        } catch (ScriptFailed $e) {
+            // do not exist, trying to install
+        }
+
+        try {
             $preCondition = new Script(
                 Command::foreground('which')->withArgument('curl'),
             );
