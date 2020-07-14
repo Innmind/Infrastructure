@@ -14,7 +14,7 @@ final class IStatMenus
         return InstallViaZip::for(
             'iStat Menus',
             Url::of('https://bjango.com/mac/istatmenus/'),
-            Template::of('https://download.bjango.com/istatmenus5/'),
+            Template::of('https://download.bjango.com/istatmenus/'),
         );
     }
 }
