@@ -7,14 +7,14 @@ use Innmind\Genome\Gene;
 use Innmind\Url\Url;
 use Innmind\UrlTemplate\Template;
 
-final class IStatMenus
+final class TablePlus
 {
     public static function install(): Gene
     {
-        return InstallViaZip::for(
-            'iStat Menus',
-            Url::of('https://bjango.com/mac/istatmenus/'),
-            Template::of('https://download.bjango.com/istatmenus/'),
+        return InstallViaDmg::for(
+            'TablePlus',
+            Url::of('https://tableplus.com/download'),
+            Template::of('/release/osx/tableplus_latest'),
         );
     }
 }
