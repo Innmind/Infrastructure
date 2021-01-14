@@ -54,6 +54,20 @@ final class LittleSnitch implements Gene
 
             return $history;
         } catch (ScriptFailed $e) {
+            // maybe the version 5 is installed
+        }
+
+        try {
+            $alreadyExist = new Script(
+                Command::foreground('test')
+                    ->withShortOption('d')
+                    ->withArgument('Little Snitch.app')
+                    ->withWorkingDirectory(Path::of('/Applications/')),
+            );
+            $alreadyExist($target);
+
+            return $history;
+        } catch (ScriptFailed $e) {
             // do not exist, trying to install
         }
 
