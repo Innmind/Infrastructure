@@ -47,20 +47,6 @@ final class LittleSnitch implements Gene
             $alreadyExist = new Script(
                 Command::foreground('test')
                     ->withShortOption('d')
-                    ->withArgument('Little Snitch Configuration.app')
-                    ->withWorkingDirectory(Path::of('/Applications/')),
-            );
-            $alreadyExist($target);
-
-            return $history;
-        } catch (ScriptFailed $e) {
-            // maybe the version 5 is installed
-        }
-
-        try {
-            $alreadyExist = new Script(
-                Command::foreground('test')
-                    ->withShortOption('d')
                     ->withArgument('Little Snitch.app')
                     ->withWorkingDirectory(Path::of('/Applications/')),
             );
@@ -99,8 +85,16 @@ final class LittleSnitch implements Gene
             $this->wait($local, $target);
 
             $install = new Script(
-                Command::foreground('open')
-                    ->withArgument("/Volumes/Little Snitch {$this->version}/Little Snitch Installer.app"),
+                Command::foreground('cp')
+                    ->withShortOption('r') // because the app is a directory
+                    ->withArgument("/Volumes/Little Snitch {$this->version}/Little Snitch.app")
+                    ->withArgument('/Applications/'),
+                Command::foreground('diskutil')
+                    ->withArgument('unmountDisk')
+                    ->withArgument("/Volumes/Little Snitch {$this->version}"),
+                Command::foreground('rm')
+                    ->withArgument('littlesnitch.dmg')
+                    ->withWorkingDirectory(Path::of('Downloads')),
             );
             $install($target);
         } catch (ScriptFailed $e) {
