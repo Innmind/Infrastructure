@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         php-version: ['7.4']
-    name: 'Psalm - PHP/${{ matrix.php-version }}'
+    name: 'Psalm'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
