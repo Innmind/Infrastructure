@@ -17,7 +17,6 @@ use Innmind\Server\Control\{
     Exception\ScriptFailed,
 };
 use Innmind\Url\Path;
-use Innmind\TimeContinuum\Earth\Period\Second;
 
 final class Mackup implements Gene
 {

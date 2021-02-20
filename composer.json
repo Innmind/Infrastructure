@@ -34,7 +34,8 @@
         }
     },
     "require-dev": {
-        "vimeo/psalm": "~4.4"
+        "vimeo/psalm": "~4.4",
+        "innmind/coding-standard": "^1.1"
     },
     "provide": {
         "innmind/genome-genes": "3.0"
