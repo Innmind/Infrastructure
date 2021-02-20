@@ -32,7 +32,7 @@ final class Flux implements Gene
 
     public function name(): string
     {
-        return "Flux install";
+        return 'Flux install';
     }
 
     public function express(

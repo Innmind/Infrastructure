@@ -15,7 +15,7 @@
         "issues": "http://github.com/Innmind/Infrastructure/issues"
     },
     "require": {
-        "php": "~7.4",
+        "php": "~7.4|~8.0",
         "innmind/infrastructure-amqp": "^3.0.2",
         "innmind/infrastructure-neo4j": "^3.0.2",
         "innmind/infrastructure-nginx": "^3.0.2",
@@ -34,8 +34,8 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "~9.0",
-        "vimeo/psalm": "^3.7"
+        "vimeo/psalm": "~4.4",
+        "innmind/coding-standard": "^1.1"
     },
     "provide": {
         "innmind/genome-genes": "3.0"

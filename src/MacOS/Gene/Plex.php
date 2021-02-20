@@ -35,7 +35,7 @@ final class Plex implements Gene
 
     public function name(): string
     {
-        return "Plex install";
+        return 'Plex install';
     }
 
     public function express(
